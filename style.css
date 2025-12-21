@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+nav {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: black;
+  align-items: center;
+  color: white;
+  font-family: arial;
+}
+
+nav h1 {
+  white-space: nowrap;
+  cursor: default;
+  cursor: pointer;
+}
+
+#navMenu {
+  display: flex;
+  gap: 20px;
+}
+
+
+#navMenu a {
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+  padding: 6px 10px;
+  /* background-color: hsl(0, 0%, 90%); */
+  position: relative;
+  border-radius: 4px;
+  font-family: arial;
+  transition: all .1s ease-in-out;
+}
+
+#navMenu a:hover{
+  /* color: #c2c2c2; */
+  background-color: #444444c7;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  background: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+  font-family: arial;
+  font-weight: bolder;
+  color: white;
+  padding: 60px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background: black;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 18px;
+  font-family: arial;
+  color: white;
+  text-align: center;
+}
+
+#home {
+  background-color: steelblue;
+}
+
+#about {
+  background-color: crimson;
+}
+
+#skills {
+  background-color: rebeccapurple;
+}
+
+#contact {
+  background-color: lightseagreen;
+}
+
+.nav2 {
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav2 i {
+  cursor: pointer;
+  display: none;
+}
+
+
+
+
+@media (max-width: 640px) {
+
+
+
+  #navMenu {
+    padding: 20px;
+    background-color: #111;
+    width: 100%;
+    /* keep in flow for transitions - don't use display:none */
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    /* collapsed state */
+    overflow: hidden;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+    z-index: -1;
+  }
+
+  #navMenu.active {
+    /* expand to visible state */
+    max-height: 45vh;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #navMenu a::selection {
+    background: none;
+  }
+
+  .nav2 i {
+    display: block;
+    visibility: visible;
+    cursor: pointer;
+  }
+
+  main {
+    font-size: 14vw;
+  }
+}
