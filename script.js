@@ -21,7 +21,7 @@ skillsEl.addEventListener('click', () => {
 });
 contactEl.addEventListener('click', () => {
     document.getElementById('contact').scrollIntoView({ behavior: "smooth" })
-}); 
+});
 
 
 
@@ -36,14 +36,14 @@ const mainEl = document.querySelectorAll('main');
 
 
 btnEl.addEventListener('click', () => {
-    navMenuEl.classList.toggle('active'); 
+    navMenuEl.classList.toggle('active');
 });
 
 
-mainEl.forEach((e)=>{
-    e.addEventListener('click', ()=>{
-    navMenuEl.classList.remove('active'); 
-        
+mainEl.forEach((e) => {
+    e.addEventListener('click', () => {
+        navMenuEl.classList.remove('active');
+
     });
-    
+
 })
